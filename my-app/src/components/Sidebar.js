@@ -1,9 +1,11 @@
+import css from './css/Sidebar.module.css'
+
 const Sidebar = () => {
     return (
-        <div>
-            <a href='#!' className='sidebar'>My photos</a>
-            <a href='#!' className='Sidebar'>My illustrations</a>
-            <a href='#!' className='Sidebar'>My paintings</a>
+        <div className={css.sidebar} >
+            <a href='#!'>My photos</a>
+            <a href='#!'>My illustrations</a>
+            <a href='#!'>My paintings</a>
         </div>
     )
 }
