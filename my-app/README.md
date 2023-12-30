@@ -36,4 +36,13 @@ What is a Class Component? When are they used?
 How to add State to your components?
 How to change a component's State
 
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+Handling Events in React.
+Conditionally Rendering different content based on props.
+Nesting Components within other components.
+Adding Methods as Props.
+
+
 
