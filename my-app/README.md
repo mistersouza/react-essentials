@@ -14,3 +14,26 @@
 Inside the folder named src you will find a file named posts.json. This file will not be used until a challenge later in the content.  
 
 For convenience react comes installed in this template. A package named axios has also been installed as it will be required in a challenge later.
+
+Learning Objectives
+You will be guided through this process to create some core user functionality, such as:
+
+Creating a Navigation Menu.
+Creating a User Sign In form displaying different content based on user interations.
+Creating an API-Loaded Image List complete with title, author and description text.
+Creating an Interactive Search Field.
+
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+What is a Functional Component? When are they used?
+How to add Props to your components?
+
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+What is a Class Component? When are they used?
+How to add State to your components?
+How to change a component's State
+
+

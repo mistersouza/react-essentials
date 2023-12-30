@@ -1,5 +1,5 @@
   
-.NavBar {
+.navBar {
     grid-row: 1;
     grid-column: 1 / span 4;
     display: flex;
@@ -11,16 +11,16 @@
     background-color: white;
 }
 
-.NavBar div {
+.navBar div {
     padding-right: 35px;
 }
-.NavBar h1 {
+.navBar h1 {
     font-family: "montserrat";
     font-size: 28px;
     color: #4a4a4f;
 }
 
-.NavBar span {
+.navBar span {
     font-family: "montserrat";
     font-size: 14px;
     color: #4a4a4f;
@@ -28,14 +28,14 @@
     font-weight: bold;
 }
 
-.NavBar button {
+.navBar button {
     color: #4a4a4f;
     border: lightgrey solid 1px;
     background-color: white;
     padding: 5px;
     width: 100px;
 }
-.NavBar button:hover{
+.navBar button:hover{
     color: #4a4a4f;
     background-color: #e6ecf0;
     border: lightgrey solid 1px;
