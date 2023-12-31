@@ -44,5 +44,10 @@ Conditionally Rendering different content based on props.
 Nesting Components within other components.
 Adding Methods as Props.
 
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+Rendering Lists in React using map().
+Adding Keys and Indexes to list items.
 
 
