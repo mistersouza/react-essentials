@@ -10,7 +10,7 @@ class NavBarSimple extends Component {
         }
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState(prevState => {
             return {
                 message: prevState.message === 'Hello!' ? 'Welcome back!' : 'Hello!',
@@ -27,7 +27,7 @@ class NavBarSimple extends Component {
             <div className={css.navBar}>
                 <h1>My Gallery</h1>
                 <span>{this.state.message}</span>
-                <button onClick={() => this.handleClick()}>{this.state.buttonText}</button>
+                <button onClick={this.handleClick}>{this.state.buttonText}</button>
             </div>
         )
     }

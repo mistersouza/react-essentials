@@ -1,4 +1,4 @@
-.NavBar {
+.navBar {
     grid-row: 1;
     grid-column: 1 / span 4;
     display: flex;
@@ -10,13 +10,13 @@
     background-color: white;
 }
 
-.NavBar h1 {
+.navBar h1 {
     font-family: "montserrat";
     font-size: 28px;
     color: #4a4a4f;
 }
 
-.NavBar span {
+.navBar span {
     font-family: "montserrat";
     font-size: 14px;
     color: #4a4a4f;
@@ -24,26 +24,26 @@
     font-weight: bold;
 }
 
-.NavBar > div {
+.navBar > div {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 30px;
 }
 
-.NavBar form {
+.navBar form {
     display: flex;
     flex-direction: row;
 }
 
-.NavBar label {
+.navBar label {
     color: #4a4a4f;
     margin: 1px;
     padding: 5px 0 5px;
     padding-right: 10px;
 }
 
-.NavBar input {
+.navBar input {
     margin: 1px;
     margin-right: 10px;
     width: 150px;
@@ -52,17 +52,17 @@
     background-color: white;
 }
 
-.NavBar form > div {
+.navBar form > div {
     display: flex;
     justify-content: space-between;
     padding: 0px 10px;
 }
 
-.NavBar #login-form > div{
+.navBar #login-form > div{
     display: inline-block;
 }
 
-.NavBar button {
+.navBar button {
     color: #4a4a4f;
     border: lightgrey solid 1px;
     background-color: white;
@@ -70,7 +70,7 @@
     width: 100px;
     margin-left: 5px;
 }
-.NavBar button:hover{
+.navBar button:hover{
     color: #4a4a4f;
     background-color: #e6ecf0;
     border: lightgrey solid 1px;
