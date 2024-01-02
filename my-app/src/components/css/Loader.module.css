@@ -1,10 +1,10 @@
-.Loader {
+.loader {
     display: inline-block;
     width: 80px;
     height: 80px;
     margin: 20% 35%;
   }
-  .Loader:after {
+  .loader:after {
     content: " ";
     display: block;
     width: 64px;
