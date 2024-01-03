@@ -66,3 +66,14 @@ Forms with Controlled Components
 Forms with Uncontrolled Components
 Submitting Form Data
 How to Filter a Search
+
+
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+React Hooks, including
+the useState() Hook
+the useEffect() Hook
+Conditional Effects
+Component Lifecycles with Hooks
+Effect Cleanup Functions with Hooks

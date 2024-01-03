@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import PostItem from './PostItem'
 import Loader from './Loader'
 import { savedPosts as posts } from '../posts.json'
@@ -16,7 +16,8 @@ export class Content extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({
-                isLoaded: true
+                isLoaded: true,
+                posts: posts
             })
         }, 2000)
     }
@@ -38,14 +39,14 @@ export class Content extends Component {
                 <h1>My Photos</h1>
                 <form>
                     <label htmlFor='searchInput'>Search:</label>
-                    <input type='search' id='searchInput' name='searchInput' value={this.state.posts} onChange={this.handleInputChange} />
+                    <input type='search' id='searchInput' placeholder='By author' onChange={this.handleInputChange} />
                     <h4>posts found: {this.state.posts.length}</h4>
                 </form>
             </div>
             <div className={css.searchResults}>
                 {
                     this.state.isLoaded 
-                    ? <PostItem posts={posts} />
+                    ? <PostItem posts={this.state.posts} />
                     : <Loader />
                 }
             </div>
