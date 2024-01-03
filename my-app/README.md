@@ -50,4 +50,19 @@ In order to complete this task, you will need to learn about:
 Rendering Lists in React using map().
 Adding Keys and Indexes to list items.
 
+Learning Objectives
+In order to complete this task, you will need to learn about:
 
+Component Lifecycles, including
+componentDidMount
+componentDidUpdate
+componentWillUnmount
+
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+Forms in React including:
+Forms with Controlled Components
+Forms with Uncontrolled Components
+Submitting Form Data
+How to Filter a Search

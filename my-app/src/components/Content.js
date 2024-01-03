@@ -8,7 +8,8 @@ export class Content extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        isLoaded: false
+        isLoaded: false,
+        posts: []
       }
     }
 
@@ -20,11 +21,26 @@ export class Content extends Component {
         }, 2000)
     }
 
+    handleInputChange = (event) => {
+        let name = event.target.value.toLowerCase()
+        const filteredPosts = posts.filter(post => {
+            return post.name.toLowerCase().includes(name); 
+        })
+        this.setState({
+            posts: filteredPosts
+        })
+    }
+
   render() {
     return (
         <div className={css.content}>
             <div className={css.titleBar}>
                 <h1>My Photos</h1>
+                <form>
+                    <label htmlFor='searchInput'>Search:</label>
+                    <input type='search' id='searchInput' name='searchInput' value={this.state.posts} onChange={this.handleInputChange} />
+                    <h4>posts found: {this.state.posts.length}</h4>
+                </form>
             </div>
             <div className={css.searchResults}>
                 {
