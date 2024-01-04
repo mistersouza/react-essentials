@@ -85,3 +85,13 @@ HTTP Requests and Data Fetching, including
 Fetching and rendering data with GET
 Sending Data with POST
 Duplicating GET/POST Functionality with Hooks
+
+Congratulations on completing React Essentials. Here's a summary of the key topics you covered in this module:
+
+Functional & Class Components
+Handling Events
+Rendering Lists
+Component Lifecycles
+Using Hooks
+Using API with React
+Click the Next button to continue to the next module: Django Rest Framework.

@@ -9,7 +9,7 @@ function Content() {
     const [ fetchedPosts, setFetchedPosts ] = useState([]);
     const [ isLoaded, setIsLoaded ] = useState(false)
 
-    const fetchImages = async() => {
+    const fetchPosts = async() => {
         const response = await axios.get(`https://pixabay.com/api/?key=${API_KEY}&per_page=100`)
         const { hits } = response.data
         setFetchedPosts(hits);
@@ -17,13 +17,13 @@ function Content() {
     }
 
     useEffect(() => {
-        fetchImages()
+        fetchPosts()
     }, [])
     
     const handleInputChange = (event) => {
-        let name = event.target.value.toLowerCase()
+        let user = event.target.value.toLowerCase()
         const filteredPosts = fetchedPosts.filter(post => {
-            return post.user.toLocaleLowerCase().includes(name)
+            return post.user.toLocaleLowerCase().includes(user)
         })
         setFetchedPosts(filteredPosts)
     }
