@@ -77,3 +77,11 @@ the useEffect() Hook
 Conditional Effects
 Component Lifecycles with Hooks
 Effect Cleanup Functions with Hooks
+
+Learning Objectives
+In order to complete this task, you will need to learn about:
+
+HTTP Requests and Data Fetching, including
+Fetching and rendering data with GET
+Sending Data with POST
+Duplicating GET/POST Functionality with Hooks

@@ -1,7 +1,8 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component } from 'react'
+import axios from 'axios'
+import API_KEY from '../secrets'
 import PostItem from './PostItem'
 import Loader from './Loader'
-import { savedPosts as posts } from '../posts.json'
 import css from './css/Content.module.css'
 
 export class Content extends Component {
@@ -12,20 +13,26 @@ export class Content extends Component {
         posts: []
       }
     }
+    
+    fetchImages() {
+        axios.get(`https://pixabay.com/api/?key=${API_KEY}&per_page=100`)
+        .then(response => {
+            this.setState({
+                posts: response.data.hits,
+                isLoaded: true
+            })
+        })
+    }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                isLoaded: true,
-                posts: posts
-            })
-        }, 2000)
+        this.fetchImages()
     }
+
 
     handleInputChange = (event) => {
         let name = event.target.value.toLowerCase()
-        const filteredPosts = posts.filter(post => {
-            return post.name.toLowerCase().includes(name); 
+        const filteredPosts = this.state.posts.filter(post => {
+            return post.user.toLowerCase().includes(name); 
         })
         this.setState({
             posts: filteredPosts
