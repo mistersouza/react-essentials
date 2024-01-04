@@ -1,64 +1,52 @@
-import React, { Component } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import API_KEY from '../secrets'
 import PostItem from './PostItem'
 import Loader from './Loader'
 import css from './css/Content.module.css'
 
-export class Content extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        isLoaded: false,
-        posts: []
-      }
+function Content() {
+    const [ fetchedPosts, setFetchedPosts ] = useState([]);
+    const [ isLoaded, setIsLoaded ] = useState(false)
+
+    const fetchImages = async() => {
+        const response = await axios.get(`https://pixabay.com/api/?key=${API_KEY}&per_page=100`)
+        const { hits } = response.data
+        setFetchedPosts(hits);
+        setIsLoaded(true)
+    }
+
+    useEffect(() => {
+        fetchImages()
+    }, [])
+    
+    const handleInputChange = (event) => {
+        let name = event.target.value.toLowerCase()
+        const filteredPosts = fetchedPosts.filter(post => {
+            return post.user.toLocaleLowerCase().includes(name)
+        })
+        setFetchedPosts(filteredPosts)
     }
     
-    fetchImages() {
-        axios.get(`https://pixabay.com/api/?key=${API_KEY}&per_page=100`)
-        .then(response => {
-            this.setState({
-                posts: response.data.hits,
-                isLoaded: true
-            })
-        })
-    }
-
-    componentDidMount() {
-        this.fetchImages()
-    }
-
-
-    handleInputChange = (event) => {
-        let name = event.target.value.toLowerCase()
-        const filteredPosts = this.state.posts.filter(post => {
-            return post.user.toLowerCase().includes(name); 
-        })
-        this.setState({
-            posts: filteredPosts
-        })
-    }
-
-  render() {
-    return (
-        <div className={css.content}>
+  return (
+    <div className={css.content}>
             <div className={css.titleBar}>
                 <h1>My Photos</h1>
                 <form>
                     <label htmlFor='searchInput'>Search:</label>
-                    <input type='search' id='searchInput' placeholder='By author' onChange={this.handleInputChange} />
-                    <h4>posts found: {this.state.posts.length}</h4>
+                    <input type='search' id='searchInput' placeholder='By author' onChange={handleInputChange} />
+                    <h4>posts found: {fetchedPosts.length}</h4>
                 </form>
             </div>
             <div className={css.searchResults}>
                 {
-                    this.state.isLoaded 
-                    ? <PostItem posts={this.state.posts} />
+                    isLoaded 
+                    ? <PostItem posts={fetchedPosts} />
                     : <Loader />
                 }
             </div>
         </div>
-    )}
+    )
 }
 
-export default Content; 
+export default Content
